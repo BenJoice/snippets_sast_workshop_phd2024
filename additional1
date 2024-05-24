@@ -1,0 +1,21 @@
+public class Test {
+  
+  public static void main(String[] args) {
+    SQLQueryRunner runner = new SQLQueryRunner();
+    String input = new UserInputGenerator().getUserInput();
+
+   
+    runner.run("SELECT * from table");
+    input = "user WHERE ";
+
+    runner.run("SELECT * from " + input);
+
+    
+   runner.run("SELECT * from table" + input.endsWith("something"));
+
+   
+   runner.run("SELECT * from table" + input.indexOf('u'));
+
+   
+    runner.run("SELECT * from " + input.substring(0));
+  }
